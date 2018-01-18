@@ -1,0 +1,73 @@
+
+<div>
+		<ul>
+		  <li *ngFor="let user of listOfUsers"> 
+		  	 {{user.firstName}} 
+		  </li>
+		  
+		</ul>
+</div>
+<form #formUser="ngForm" (ngSubmit)="SignUpUser(formUser)" novalidate>
+	<div class="form-group">
+			<input type="text" 
+				class="form-control" 
+				[(ngModel)]="user.firstName"
+				name="firstName"
+				#firstName="ngModel"
+				placeholder="your first name"
+				required
+			>
+			<input type="text" 
+				class="form-control" 
+				[(ngModel)]="user.lastName"
+				name="lastName"
+				#lastName="ngModel"
+				placeholder="your last name"
+				required
+			>
+			<input type="email" 
+				class="form-control" 
+				[(ngModel)]="user.email"
+				name="email"
+				#email="ngModel"
+				placeholder="your email address"
+				required
+			>
+			<input type="password" 
+				class="form-control" 
+				[(ngModel)]="user.password"
+				name="password"
+				#password="ngModel"
+				placeholder="create your password"
+				required
+			>
+			
+			<input type="text" 
+				class="form-control" 
+				[(ngModel)]="user.address.city"
+				name="city"
+				#city="ngModel"
+				placeholder="City"
+				required
+			>
+			<input type="text"
+				class="form-control" 
+				[(ngModel)]="user.address.postalCode"
+				name="postalCode"
+				#postalCode="ngModel"
+				placeholder="postal code"
+				required
+			>
+			<input type="text" 
+				class="form-control" 
+				[(ngModel)]="user.address.street"
+				name="street"
+				#street="ngModel"
+				placeholder="street"
+				required
+			>
+			<input type="submit" value="Get started">
+	</div>
+
+</form>
+
